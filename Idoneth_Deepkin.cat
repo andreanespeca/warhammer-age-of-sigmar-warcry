@@ -1,17 +1,108 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="7bf4-8b1a-c2c2-3323" name="Idoneth Deepkin" revision="1" battleScribeVersion="2.02" library="false" gameSystemId="e5fe-db52-95ba-6b62" gameSystemRevision="3" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="7bf4-8b1a-c2c2-3323" name="Idoneth Deepkin" revision="2" battleScribeVersion="2.03" library="false" gameSystemId="e5fe-db52-95ba-6b62" gameSystemRevision="3" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <entryLinks>
-    <entryLink id="c861-0ad3-7cf1-b250" name="Ishlaen Guard" hidden="false" collective="false" targetId="3d6b-83e3-0566-4234" type="selectionEntry"/>
-    <entryLink id="2050-3e57-0b0f-cbb9" name="Ishlaen Lochian Prince" hidden="false" collective="false" targetId="3d56-b656-11ed-cc43" type="selectionEntry"/>
-    <entryLink id="16ad-6e77-05c2-b461" name="Morrsarr Guard" hidden="false" collective="false" targetId="5e6f-2ebf-fa9a-6188" type="selectionEntry"/>
-    <entryLink id="adbf-b117-8fd4-892b" name="Morrsarr Lochian Prince" hidden="false" collective="false" targetId="c524-31c4-c10a-3fc8" type="selectionEntry"/>
-    <entryLink id="e45f-9f0a-cdbd-df89" name="Namarti Reaver" hidden="false" collective="false" targetId="20e4-90ec-bfb3-ed17" type="selectionEntry"/>
-    <entryLink id="de1f-096a-7f50-cbab" name="Namarti Reaver Icon Bearer" hidden="false" collective="false" targetId="9825-ac56-9b11-6f50" type="selectionEntry"/>
-    <entryLink id="cb9a-8932-66c4-edba" name="Namarti Thrall" hidden="false" collective="false" targetId="627f-8759-d0cc-7cfd" type="selectionEntry"/>
-    <entryLink id="1c2d-0c42-dec6-b371" name="Namarti Thrall Icon Bearer" hidden="false" collective="false" targetId="6b1f-e315-420e-4675" type="selectionEntry"/>
+    <entryLink id="c861-0ad3-7cf1-b250" name="Ishlaen Guard" hidden="false" collective="false" import="true" targetId="3d6b-83e3-0566-4234" type="selectionEntry"/>
+    <entryLink id="2050-3e57-0b0f-cbb9" name="Ishlaen Lochian Prince" hidden="false" collective="false" import="true" targetId="3d56-b656-11ed-cc43" type="selectionEntry"/>
+    <entryLink id="16ad-6e77-05c2-b461" name="Morrsarr Guard" hidden="false" collective="false" import="true" targetId="5e6f-2ebf-fa9a-6188" type="selectionEntry"/>
+    <entryLink id="adbf-b117-8fd4-892b" name="Morrsarr Lochian Prince" hidden="false" collective="false" import="true" targetId="c524-31c4-c10a-3fc8" type="selectionEntry"/>
+    <entryLink id="e45f-9f0a-cdbd-df89" name="Namarti Reaver" hidden="false" collective="false" import="true" targetId="20e4-90ec-bfb3-ed17" type="selectionEntry"/>
+    <entryLink id="de1f-096a-7f50-cbab" name="Namarti Reaver Icon Bearer" hidden="false" collective="false" import="true" targetId="9825-ac56-9b11-6f50" type="selectionEntry"/>
+    <entryLink id="cb9a-8932-66c4-edba" name="Namarti Thrall" hidden="false" collective="false" import="true" targetId="627f-8759-d0cc-7cfd" type="selectionEntry"/>
+    <entryLink id="1c2d-0c42-dec6-b371" name="Namarti Thrall Icon Bearer" hidden="false" collective="false" import="true" targetId="6b1f-e315-420e-4675" type="selectionEntry"/>
   </entryLinks>
+  <rules>
+    <rule id="a225-bd2a-8cc4-28b9" name="⚁ [Double] Storm Fire" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22cb-2cdd-5a58-6f89" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0600-c649-d723-9878" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>Until the end of this fighter&apos;s activation, add 1 to the Attacks characteristic of attack actions made by this fighter that target an enemy fighter more than 3&quot; away.</description>
+    </rule>
+    <rule id="fab3-b4a2-9b7d-05cc" name="⚁ [Double] Sweeping Blow" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22cb-2cdd-5a58-6f89" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="16a6-2b54-bd8b-f8e5" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>Roll 1 dice for each visible enemy fighter within 2&quot; of this fighter. On a 5, allocate 1 damage point to the fighter being rolled for. On a 6, allocate a number of damage points to the fighter being rolled for equal to the value of this ability.</description>
+    </rule>
+    <rule id="f21f-eca7-a43f-e978" name="⚂ [Triple] High Tide" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22cb-2cdd-5a58-6f89" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4d50-0ab6-f937-3410" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>A fighter can use this ability only if it is the third battle round. Add 1 to the Attacks and Strength characteristics of attack actions that have a Range characteristic of 3 or less made by friendly fighters while they are within 6&quot; of this fighter.</description>
+    </rule>
+    <rule id="11a5-9bfd-a068-cfc8" name="⚂ [Triple] Biovoltaic Barrier" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22cb-2cdd-5a58-6f89" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e250-737c-002f-8734" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>Until the end of the battle round, count each critical hit from attack actions that target this fighter as a hit instead.</description>
+    </rule>
+    <rule id="006d-3fa3-0b50-3fdd" name="⚁ [Double] Low Tide" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22cb-2cdd-5a58-6f89" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>A fighter can use this abiltiy only if it is the first battle round. This fighter can make a bonus move action a number of inches equal to the value of this ability.</description>
+    </rule>
+    <rule id="3c76-1fcf-f91d-bdc2" name="⚃ [Quad] Biovoltaic Blast" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22cb-2cdd-5a58-6f89" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="504d-d9a6-d53a-f756" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>Allocate a number of damage points equal to the value of this ability to all visible enemy fighters within 3&quot; of this fighter.</description>
+    </rule>
+  </rules>
   <sharedSelectionEntries>
-    <selectionEntry id="627f-8759-d0cc-7cfd" name="Namarti Thrall" hidden="false" collective="false" type="unit">
+    <selectionEntry id="627f-8759-d0cc-7cfd" name="Namarti Thrall" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="9f70-953a-13e4-147c" name="Namarti Thrall" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -45,7 +136,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="80.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="3d56-b656-11ed-cc43" name="Ishlaen Lochian Prince" hidden="false" collective="false" type="unit">
+    <selectionEntry id="3d56-b656-11ed-cc43" name="Ishlaen Lochian Prince" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="6fea-c426-298f-0a9d" name="Ishlaen Lochian Prince" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -82,7 +173,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="260.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="3d6b-83e3-0566-4234" name="Ishlaen Guard" hidden="false" collective="false" type="unit">
+    <selectionEntry id="3d6b-83e3-0566-4234" name="Ishlaen Guard" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="855c-17ed-9682-87a4" name="Ishlaen Guard" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -118,7 +209,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="195.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="5e6f-2ebf-fa9a-6188" name="Morrsarr Guard" hidden="false" collective="false" type="unit">
+    <selectionEntry id="5e6f-2ebf-fa9a-6188" name="Morrsarr Guard" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="26a8-4ae3-e089-f08f" name="Morrsarr Guard" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -154,7 +245,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="200.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="c524-31c4-c10a-3fc8" name="Morrsarr Lochian Prince" hidden="false" collective="false" type="unit">
+    <selectionEntry id="c524-31c4-c10a-3fc8" name="Morrsarr Lochian Prince" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="d831-fb42-5464-1604" name="Morrsarr Lochian Prince" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -191,7 +282,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="265.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="9825-ac56-9b11-6f50" name="Namarti Reaver Icon Bearer" hidden="false" collective="false" type="unit">
+    <selectionEntry id="9825-ac56-9b11-6f50" name="Namarti Reaver Icon Bearer" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="499d-a1b7-10a2-fd22" name="Namarti Reaver Icon Bearer" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -234,7 +325,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="135.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="20e4-90ec-bfb3-ed17" name="Namarti Reaver" hidden="false" collective="false" type="unit">
+    <selectionEntry id="20e4-90ec-bfb3-ed17" name="Namarti Reaver" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="2e01-15d7-cc5e-5d34" name="Namarti Reaver" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -276,7 +367,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="75.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="6b1f-e315-420e-4675" name="Namarti Thrall Icon Bearer" hidden="false" collective="false" type="unit">
+    <selectionEntry id="6b1f-e315-420e-4675" name="Namarti Thrall Icon Bearer" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="3257-315e-3e15-48de" name="Namarti Thrall Icon Bearer" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>

@@ -1,18 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="6686-f99b-957f-1415" name="Iron Golems" revision="2" battleScribeVersion="2.02" library="false" gameSystemId="e5fe-db52-95ba-6b62" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="6686-f99b-957f-1415" name="Iron Golems" revision="3" battleScribeVersion="2.03" library="false" gameSystemId="e5fe-db52-95ba-6b62" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <entryLinks>
-    <entryLink id="4289-82c9-fd89-914b" name="Dominar" hidden="false" collective="false" targetId="d307-5c69-952e-bce5" type="selectionEntry"/>
-    <entryLink id="b2f2-0c66-4134-c9b2" name="Drillmaster" hidden="false" collective="false" targetId="9607-b287-32c4-7a05" type="selectionEntry"/>
-    <entryLink id="a387-7fe2-6b8a-1142" name="Iron Legionary" hidden="false" collective="false" targetId="8d98-6ba7-da23-9ec6" type="selectionEntry"/>
-    <entryLink id="3107-cc3f-4a12-2f2e" name="Ogor Breacher" hidden="false" collective="false" targetId="2647-6d65-2744-460b" type="selectionEntry"/>
-    <entryLink id="df20-a62d-3e58-e2e3" name="Prefector" hidden="false" collective="false" targetId="65ab-ed38-91c3-9d0e" type="selectionEntry"/>
-    <entryLink id="edfa-acdb-4eb0-7d8f" name="Signifer" hidden="false" collective="false" targetId="688a-50ac-df0e-a75c" type="selectionEntry"/>
-    <entryLink id="0e7d-806d-feba-dfaf" name="Armator" hidden="false" collective="false" targetId="fe56-b0e5-efb4-e893" type="selectionEntry"/>
-    <entryLink id="f0ab-eed4-ea10-8a03" name="Iron Legionary with Bolas" hidden="false" collective="false" targetId="d750-9067-5c66-6867" type="selectionEntry"/>
-    <entryLink id="83c3-dd0a-4f3c-bb5f" name="Iron Legionary with Twin Hammers" hidden="false" collective="false" targetId="dedc-616b-9bb7-749f" type="selectionEntry"/>
+    <entryLink id="4289-82c9-fd89-914b" name="Dominar" hidden="false" collective="false" import="true" targetId="d307-5c69-952e-bce5" type="selectionEntry"/>
+    <entryLink id="b2f2-0c66-4134-c9b2" name="Drillmaster" hidden="false" collective="false" import="true" targetId="9607-b287-32c4-7a05" type="selectionEntry"/>
+    <entryLink id="a387-7fe2-6b8a-1142" name="Iron Legionary" hidden="false" collective="false" import="true" targetId="8d98-6ba7-da23-9ec6" type="selectionEntry"/>
+    <entryLink id="3107-cc3f-4a12-2f2e" name="Ogor Breacher" hidden="false" collective="false" import="true" targetId="2647-6d65-2744-460b" type="selectionEntry"/>
+    <entryLink id="df20-a62d-3e58-e2e3" name="Prefector" hidden="false" collective="false" import="true" targetId="65ab-ed38-91c3-9d0e" type="selectionEntry"/>
+    <entryLink id="edfa-acdb-4eb0-7d8f" name="Signifer" hidden="false" collective="false" import="true" targetId="688a-50ac-df0e-a75c" type="selectionEntry"/>
+    <entryLink id="0e7d-806d-feba-dfaf" name="Armator" hidden="false" collective="false" import="true" targetId="fe56-b0e5-efb4-e893" type="selectionEntry"/>
+    <entryLink id="f0ab-eed4-ea10-8a03" name="Iron Legionary with Bolas" hidden="false" collective="false" import="true" targetId="d750-9067-5c66-6867" type="selectionEntry"/>
+    <entryLink id="83c3-dd0a-4f3c-bb5f" name="Iron Legionary with Twin Hammers" hidden="false" collective="false" import="true" targetId="dedc-616b-9bb7-749f" type="selectionEntry"/>
   </entryLinks>
+  <rules>
+    <rule id="7200-ce6c-ec3e-1d52" name="⚁ [Double] Lead with Strength" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="706c-1f7c-01c4-519e" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4d50-0ab6-f937-3410" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>A fighter can use this ability only if an enemy fighter has been taken down by an attack action made by them this activation. This fighter makes a bonus move action, or a bonus attack action.</description>
+    </rule>
+    <rule id="aab2-1cc4-76ae-22ff" name="⚁ [Double] Spine-crushing Blow" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="706c-1f7c-01c4-519e" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1a5f-39a9-6bfb-a39e" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>Add the value of this ability to the Strength characteristic of the next attack action made by this fighter this activation that has a range characteristic of 3 or less.</description>
+    </rule>
+    <rule id="020d-1e0d-9509-d6ab" name="⚁ [Double] Throw Bolas" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="706c-1f7c-01c4-519e" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>Pick a visible enemy fighter within 6&quot; of this fighter and roll 2 dice. For each roll of 4-5, allocate 1 damage point to that fighter. For reach rollof 6, allocate a number of damage points to that fighter equal to the value of this ability.</description>
+    </rule>
+    <rule id="59c2-2420-30a3-6338" name="⚂ [Triple] Living Battering Ram" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="706c-1f7c-01c4-519e" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bae7-393b-28ca-cd4b" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>Until the end of this fighter&apos;s activation, the next time this fighter finishes a move action within 1&quot; of an enemy fighter, pick a visible enemy fighter within 1&quot; of this fighter. Allocate a number of damage points to that fighter equal to the value of this ability.</description>
+    </rule>
+    <rule id="9be6-2fd6-966a-2c2d" name="⚂ [Triple] Stand Defiant" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="706c-1f7c-01c4-519e" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5984-b33a-b944-0c71" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>Until the end of the battle round, add 1 to the Toughness characteristic of friendly fighters while they are within 6&quot; of this fighter.</description>
+    </rule>
+    <rule id="7bba-5acd-cb75-a58b" name="⚃ [Quad] Whirlwind of Death" hidden="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="706c-1f7c-01c4-519e" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="504d-d9a6-d53a-f756" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <description>Allocate a number of damage points to all visible enemy fighters within 3&quot; of this fighter equal to the value of this ability.</description>
+    </rule>
+  </rules>
   <sharedSelectionEntries>
-    <selectionEntry id="d307-5c69-952e-bce5" name="Dominar" hidden="false" collective="false" type="unit">
+    <selectionEntry id="d307-5c69-952e-bce5" name="Dominar" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="676f-5b81-2fa2-a0f0" name="Dominar" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -47,7 +138,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="175.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="2647-6d65-2744-460b" name="Ogor Breacher" hidden="false" collective="false" type="unit">
+    <selectionEntry id="2647-6d65-2744-460b" name="Ogor Breacher" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="e06f-bf7b-e78a-4ff9" name="Ogor Breacher" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -81,7 +172,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="235.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="688a-50ac-df0e-a75c" name="Signifer" hidden="false" collective="false" type="unit">
+    <selectionEntry id="688a-50ac-df0e-a75c" name="Signifer" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="9df7-0f64-674b-ee46" name="Signifer" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -115,7 +206,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="120.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="9607-b287-32c4-7a05" name="Drillmaster" hidden="false" collective="false" type="unit">
+    <selectionEntry id="9607-b287-32c4-7a05" name="Drillmaster" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="4ecf-6130-3b67-4e70" name="Drillmaster" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -157,7 +248,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="125.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="65ab-ed38-91c3-9d0e" name="Prefector" hidden="false" collective="false" type="unit">
+    <selectionEntry id="65ab-ed38-91c3-9d0e" name="Prefector" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="062c-4ba9-45d4-23c0" name="Prefector" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -191,7 +282,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="125.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="8d98-6ba7-da23-9ec6" name="Iron Legionary" hidden="false" collective="false" type="unit">
+    <selectionEntry id="8d98-6ba7-da23-9ec6" name="Iron Legionary" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="829e-d5d7-7d9e-47c5" name="Iron Legionary" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -217,7 +308,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="80.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="d750-9067-5c66-6867" name="Iron Legionary with Bolas" hidden="false" collective="false" type="unit">
+    <selectionEntry id="d750-9067-5c66-6867" name="Iron Legionary with Bolas" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="92e8-f1d4-2c39-297f" name="Iron Legionary with Bolas" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -251,7 +342,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="65.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="fe56-b0e5-efb4-e893" name="Armator" hidden="false" collective="false" type="unit">
+    <selectionEntry id="fe56-b0e5-efb4-e893" name="Armator" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="27d5-e416-c3b2-50c2" name="Armator" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -277,7 +368,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="90.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="dedc-616b-9bb7-749f" name="Iron Legionary with Twin Hammers" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="dedc-616b-9bb7-749f" name="Iron Legionary with Twin Hammers" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
         <profile id="fa98-482e-ddaf-6fc5" name="Iron Legionary with Twin Hammers" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
