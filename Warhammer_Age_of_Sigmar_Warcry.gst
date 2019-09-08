@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="e5fe-db52-95ba-6b62" name="Warhammer Age of Sigmar: Warcry" revision="4" battleScribeVersion="2.02" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="e5fe-db52-95ba-6b62" name="Warhammer Age of Sigmar: Warcry" revision="4" battleScribeVersion="2.03" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <costTypes>
     <costType id="820d-9f65-fcb1-d476" name="pts" defaultCostLimit="-1.0"/>
   </costTypes>
@@ -28,6 +28,12 @@
     <profileType id="05da-eba7-8ed2-ba43" name="Artefact">
       <characteristicTypes>
         <characteristicType id="0ec8-ef3e-72d9-8b62" name="Description"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType id="c0d5-67e9-6da2-2ed7" name="Damage Allocated">
+      <characteristicTypes>
+        <characteristicType id="0409-3a84-ec4b-ce87" name="Move"/>
+        <characteristicType id="d674-19ff-86eb-77d9" name="Damage"/>
       </characteristicTypes>
     </profileType>
   </profileTypes>
@@ -112,8 +118,9 @@
     </forceEntry>
   </forceEntries>
   <entryLinks>
-    <entryLink id="86ef-2421-0626-361e" name="Raptoryz" hidden="false" collective="false" targetId="3894-dec2-f437-80ed" type="selectionEntry"/>
-    <entryLink id="130c-dcbf-92fc-7a46" name="Fury" hidden="false" collective="false" targetId="ef27-a379-1c4f-beda" type="selectionEntry"/>
+    <entryLink id="86ef-2421-0626-361e" name="Raptoryz" hidden="false" collective="false" import="true" targetId="3894-dec2-f437-80ed" type="selectionEntry"/>
+    <entryLink id="130c-dcbf-92fc-7a46" name="Fury" hidden="false" collective="false" import="true" targetId="ef27-a379-1c4f-beda" type="selectionEntry"/>
+    <entryLink id="e030-58d4-c632-46d0" name="Chimera" hidden="false" collective="false" import="true" targetId="431b-57af-af2f-d8c8" type="selectionEntry"/>
   </entryLinks>
   <rules>
     <rule id="f574-01e8-a7f3-ef39" name="⚁ [Double] Rush" hidden="false">
@@ -140,7 +147,7 @@
     </rule>
   </rules>
   <sharedSelectionEntries>
-    <selectionEntry id="3894-dec2-f437-80ed" name="Raptoryz" hidden="false" collective="false" type="model">
+    <selectionEntry id="3894-dec2-f437-80ed" name="Raptoryz" hidden="false" collective="false" import="true" type="model">
       <profiles>
         <profile id="c2d1-b9c3-bdfe-2f17" name="Raptoryz" page="" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -174,7 +181,7 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="105.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="ef27-a379-1c4f-beda" name="Fury" hidden="false" collective="false" type="unit">
+    <selectionEntry id="ef27-a379-1c4f-beda" name="Fury" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="14cc-b5c4-260c-c4ed" name="Fury" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
           <characteristics>
@@ -210,11 +217,73 @@
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="70.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="431b-57af-af2f-d8c8" name="Chimera" hidden="false" collective="false" import="true" type="unit">
+      <profiles>
+        <profile id="a1a3-c660-18c7-e811" name="Chimera" hidden="false" typeId="7bf1-ad0a-0d19-6565" typeName="Model">
+          <characteristics>
+            <characteristic name="Move" typeId="c652-026b-c19b-fb1a">*</characteristic>
+            <characteristic name="Toughness" typeId="68cf-bb2c-bce1-e83e">4</characteristic>
+            <characteristic name="Wounds" typeId="585d-de0f-f39b-3633">50</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="e273-d9d2-6eca-834a" name="Fangs" hidden="false" typeId="d83c-f0e3-af8e-b6b0" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="e85b-c9e0-0d39-7786">2</characteristic>
+            <characteristic name="Attacks" typeId="60cf-9920-ff5d-032d">6</characteristic>
+            <characteristic name="Strength" typeId="4591-7140-62c7-f2f1">6</characteristic>
+            <characteristic name="Damage" typeId="446b-a910-1596-123b">*/*</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoGroups>
+        <infoGroup id="e827-7575-f74c-e936" name="Chimera Damage Table" hidden="false">
+          <profiles>
+            <profile id="c855-ffb9-3963-f31c" name="0-10" hidden="false" typeId="c0d5-67e9-6da2-2ed7" typeName="Damage Allocated">
+              <characteristics>
+                <characteristic name="Move" typeId="0409-3a84-ec4b-ce87">12</characteristic>
+                <characteristic name="Damage" typeId="d674-19ff-86eb-77d9">5/10</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="5db5-ffda-951f-93cd" name="11-20" hidden="false" typeId="c0d5-67e9-6da2-2ed7" typeName="Damage Allocated">
+              <characteristics>
+                <characteristic name="Move" typeId="0409-3a84-ec4b-ce87">10</characteristic>
+                <characteristic name="Damage" typeId="d674-19ff-86eb-77d9">4/8</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="fe97-9cac-dc45-19be" name="21-30" hidden="false" typeId="c0d5-67e9-6da2-2ed7" typeName="Damage Allocated">
+              <characteristics>
+                <characteristic name="Move" typeId="0409-3a84-ec4b-ce87">8</characteristic>
+                <characteristic name="Damage" typeId="d674-19ff-86eb-77d9">3/6</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="765d-fcee-d80d-3db9" name="31-40" hidden="false" typeId="c0d5-67e9-6da2-2ed7" typeName="Damage Allocated">
+              <characteristics>
+                <characteristic name="Move" typeId="0409-3a84-ec4b-ce87">6</characteristic>
+                <characteristic name="Damage" typeId="d674-19ff-86eb-77d9">2/4</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="db9e-d85a-881e-4348" name="41-49" hidden="false" typeId="c0d5-67e9-6da2-2ed7" typeName="Damage Allocated">
+              <characteristics>
+                <characteristic name="Move" typeId="0409-3a84-ec4b-ce87">4</characteristic>
+                <characteristic name="Damage" typeId="d674-19ff-86eb-77d9">1/2</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </infoGroup>
+        <infoGroup id="5aed-1963-5052-0c63" name="Runemarks" hidden="false">
+          <infoLinks>
+            <infoLink id="d2a6-9a3a-2799-e418" name="Fly" hidden="false" targetId="c1f9-b53d-6ec9-3652" type="rule"/>
+            <infoLink id="0f8c-f5aa-724d-f081" name="Gargantuan" hidden="false" targetId="7f5d-7ad1-2eeb-8bbb" type="rule"/>
+            <infoLink id="1d8f-149b-e011-dcfb" name="Bulwark" hidden="false" targetId="edb7-762d-cded-8f6a" type="rule"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
-    <selectionEntryGroup id="f0b6-b408-7bdf-e0d3" name="Battle Group" hidden="true" collective="false" defaultSelectionEntryId="fdf0-ef17-53f1-0993">
+    <selectionEntryGroup id="f0b6-b408-7bdf-e0d3" name="Battle Group" hidden="true" collective="false" import="true" defaultSelectionEntryId="fdf0-ef17-53f1-0993">
       <selectionEntries>
-        <selectionEntry id="fdf0-ef17-53f1-0993" name="Shield" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="fdf0-ef17-53f1-0993" name="Shield" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="aee4-69de-e623-2870" name="Battle Group: Shield" hidden="false" targetId="38e4-7526-f8ee-1e00" primary="false"/>
           </categoryLinks>
@@ -222,7 +291,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="64c6-d403-7042-e030" name="Hammer" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="64c6-d403-7042-e030" name="Hammer" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="365d-9591-6176-8143" name="Battle Group: Hammer" hidden="false" targetId="3fd5-a6ff-d6ce-2479" primary="false"/>
           </categoryLinks>
@@ -230,7 +299,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="e248-3b1d-439c-21ba" name="Dagger" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="e248-3b1d-439c-21ba" name="Dagger" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="4804-22dd-25d3-b1f2" name="Battle Group: Dagger" hidden="false" targetId="bf64-a573-0bf8-a8e7" primary="false"/>
           </categoryLinks>
@@ -240,7 +309,7 @@
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
-    <selectionEntryGroup id="71ea-159a-95b5-7529" name="Lesser Artefact" hidden="false" collective="false">
+    <selectionEntryGroup id="71ea-159a-95b5-7529" name="Lesser Artefact" hidden="false" collective="false" import="true">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9334-3d9b-8be5-67a4" type="max"/>
       </constraints>
@@ -248,7 +317,7 @@
         <categoryLink id="2465-3d8b-b2aa-497c" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
       </categoryLinks>
       <selectionEntries>
-        <selectionEntry id="34bb-b8ec-e97b-71a5" name="[21-22] Healing Potion" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="34bb-b8ec-e97b-71a5" name="[21-22] Healing Potion" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="a96d-571f-f8dc-9f80" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -256,7 +325,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="c1aa-014f-4578-e927" name="[23-24] Swiftwind Dust" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="c1aa-014f-4578-e927" name="[23-24] Swiftwind Dust" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="1715-a47f-bb0a-4886" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -264,7 +333,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="3214-4d0c-789d-7551" name="[25-26] Silkstriker Webbing" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="3214-4d0c-789d-7551" name="[25-26] Silkstriker Webbing" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="3bd6-f6e3-6771-f7b8" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -272,7 +341,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="941f-abb4-da2b-4809" name="[31-32] Skin of Flame-ale" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="941f-abb4-da2b-4809" name="[31-32] Skin of Flame-ale" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="79e3-018b-e9c5-fe62" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -280,7 +349,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="3efa-f177-eb67-c011" name="[33-34] Jar of Chamonic Glowflies" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="3efa-f177-eb67-c011" name="[33-34] Jar of Chamonic Glowflies" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="3c73-f82c-4d4a-d817" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -288,7 +357,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="3155-d234-6417-5acb" name="[35-36] Carvolax-Scale Anklet" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="3155-d234-6417-5acb" name="[35-36] Carvolax-Scale Anklet" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="f352-3769-49cf-76d6" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -296,7 +365,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="fdb8-1bff-799a-8c94" name="[41-42] Chronomatic Dial" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="fdb8-1bff-799a-8c94" name="[41-42] Chronomatic Dial" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="e6a4-7025-6c30-b455" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -304,7 +373,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="2f18-8590-499b-6f04" name="[43-44] Ironoak Seed" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="2f18-8590-499b-6f04" name="[43-44] Ironoak Seed" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="8b15-07a2-3e41-7f55" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -312,7 +381,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="bf0f-79f7-d6aa-83f3" name="[45-46] Greater Healing Potion" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="bf0f-79f7-d6aa-83f3" name="[45-46] Greater Healing Potion" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="a60b-a369-164c-5ad1" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -320,7 +389,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="9b17-fa41-5c08-32bf" name="[51-52] Godbeast Idol" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="9b17-fa41-5c08-32bf" name="[51-52] Godbeast Idol" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="ffac-b4c7-3c10-23b8" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -328,7 +397,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="709f-3018-a72b-1f9d" name="[53-54] Vial of Jabberslythe Blood" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="709f-3018-a72b-1f9d" name="[53-54] Vial of Jabberslythe Blood" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="d58e-e3a0-1927-e743" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -336,7 +405,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="77af-03de-ff1f-866e" name="[55-56] Ur-Gold Sigil" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="77af-03de-ff1f-866e" name="[55-56] Ur-Gold Sigil" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="c3a9-9c72-45b0-4bad" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -344,7 +413,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="1f55-6324-fe60-1189" name="[61] Blight Serpent Venom" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="1f55-6324-fe60-1189" name="[61] Blight Serpent Venom" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="8b1b-d6d0-fbcc-dddf" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -352,7 +421,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="7582-43c3-8b3c-9c7d" name="[62] Bauble of Shadows" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="7582-43c3-8b3c-9c7d" name="[62] Bauble of Shadows" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="7e74-a9ce-1db3-c40d" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -360,7 +429,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="a69e-08ca-f993-4aae" name="[63] Flask of Aqua Ghyranis" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="a69e-08ca-f993-4aae" name="[63] Flask of Aqua Ghyranis" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="8003-4d5b-d6e5-0030" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -368,7 +437,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="a6fa-0a8a-070b-dc5d" name="[64] Pendant of Bloodglass" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="a6fa-0a8a-070b-dc5d" name="[64] Pendant of Bloodglass" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="c12d-36ec-0c93-36b6" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -376,7 +445,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="cb02-3f88-44b8-3a08" name="[65] Raven-feather Necklace" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="cb02-3f88-44b8-3a08" name="[65] Raven-feather Necklace" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="dd4d-0fca-b8f9-8a98" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -384,7 +453,7 @@
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="f164-9205-176a-7923" name="[66] Rune-etched Vambraces" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="f164-9205-176a-7923" name="[66] Rune-etched Vambraces" hidden="false" collective="false" import="true" type="upgrade">
           <categoryLinks>
             <categoryLink id="d5fd-93ce-ba4d-502b" name="Lesser Artefact" hidden="false" targetId="be2c-52c3-7e0a-cd08" primary="false"/>
           </categoryLinks>
@@ -394,22 +463,22 @@
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
-    <selectionEntryGroup id="cc3c-23a6-3e06-cab6" name="Destiny Level" hidden="false" collective="false">
+    <selectionEntryGroup id="cc3c-23a6-3e06-cab6" name="Destiny Level" hidden="false" collective="false" import="true">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9135-21e8-18d5-e744" type="max"/>
       </constraints>
       <selectionEntries>
-        <selectionEntry id="32b5-11f1-10f7-e7cd" name="Level 1" page="" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="32b5-11f1-10f7-e7cd" name="Level 1" page="" hidden="false" collective="false" import="true" type="upgrade">
           <costs>
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="ad0a-f854-f1a5-debe" name="Level 2" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="ad0a-f854-f1a5-debe" name="Level 2" hidden="false" collective="false" import="true" type="upgrade">
           <costs>
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="aa86-eed6-116f-d189" name="Level 3" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="aa86-eed6-116f-d189" name="Level 3" hidden="false" collective="false" import="true" type="upgrade">
           <costs>
             <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
           </costs>
