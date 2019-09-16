@@ -6,12 +6,10 @@
     <entryLink id="c834-c8a8-e851-c03d" name="Savage Morboy Boss" hidden="false" collective="false" import="true" targetId="dcbb-ddad-a12c-051c" type="selectionEntry"/>
     <entryLink id="5f95-0da6-e640-20c3" name="Savage Orruk Arrowboy" hidden="false" collective="false" import="true" targetId="0ded-2736-7ac2-a0a5" type="selectionEntry"/>
     <entryLink id="5e36-d643-f917-ef49" name="Savage Orruk Arrowboy Boss" hidden="false" collective="false" import="true" targetId="7977-b5d9-a0bb-af78" type="selectionEntry"/>
-    <entryLink id="252f-f51f-80e0-fd61" name="Savage Orruk Morboy" hidden="false" collective="false" import="true" targetId="fc8d-d270-3c6e-33ec" type="selectionEntry"/>
     <entryLink id="29f1-8c17-36c5-03c1" name="Savage Orruk Morboy with Bone Totem" hidden="false" collective="false" import="true" targetId="a2e4-2092-ffa8-c69c" type="selectionEntry"/>
     <entryLink id="7f6e-242e-d438-1bb1" name="Savage Orruk with Chompa and Bone Shield" hidden="false" collective="false" import="true" targetId="b9b9-84b2-f5fa-cada" type="selectionEntry"/>
     <entryLink id="9d4e-3571-dced-840f" name="Savage Orruk with Savage Stikka and Bone Shield" hidden="false" collective="false" import="true" targetId="6d73-e2dc-7ff3-a136" type="selectionEntry"/>
-    <entryLink id="a5c5-b135-8a9f-bdc5" name="Savage Morboy Boss" hidden="false" collective="false" import="true" targetId="dcbb-ddad-a12c-051c" type="selectionEntry"/>
-    <entryLink id="cdeb-a7ca-7a04-e58c" name="Abilities" hidden="false" collective="false" import="true" targetId="32f4-cd9d-2d2b-7b4c" type="selectionEntry"/>
+    <entryLink id="a5c5-b135-8a9f-bdc5" name="Savage Orruk Morboy" hidden="false" collective="false" import="true" targetId="fc8d-d270-3c6e-33ec" type="selectionEntry"/>
   </entryLinks>
   <rules>
     <rule id="79ee-7be0-7821-3a7b" name="⚁ [Double] Charge" hidden="true">
@@ -371,36 +369,6 @@
       </categoryLinks>
       <costs>
         <cost name="pts" typeId="820d-9f65-fcb1-d476" value="205.0"/>
-      </costs>
-    </selectionEntry>
-    <selectionEntry id="32f4-cd9d-2d2b-7b4c" name="Abilities" hidden="false" collective="false" import="true" type="upgrade">
-      <constraints>
-        <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="401b-97d0-624d-445a" type="min"/>
-        <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a1b8-1b8a-20cf-5d5e" type="max"/>
-      </constraints>
-      <categoryLinks>
-        <categoryLink id="efa9-8dd2-0eb1-9375" name="Abilities" hidden="false" targetId="3ba9-231a-5462-e502" primary="true"/>
-      </categoryLinks>
-      <selectionEntryGroups>
-        <selectionEntryGroup id="3976-4c98-3c3e-2a90" name="Universal Abilities" hidden="false" collective="false" import="true">
-          <constraints>
-            <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5985-7c1b-28e4-5031" type="max"/>
-            <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dc98-f640-03b1-6eac" type="min"/>
-          </constraints>
-          <selectionEntries>
-            <selectionEntry id="4964-c16d-6b43-81e9" name="Universal Abilities" hidden="false" collective="false" import="true" type="upgrade">
-              <infoLinks>
-                <infoLink id="a027-9ae5-3b2d-bec5" name="Universal Abilites" hidden="false" targetId="d0d1-6ed8-8fd4-b770" type="infoGroup"/>
-              </infoLinks>
-              <costs>
-                <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
-        </selectionEntryGroup>
-      </selectionEntryGroups>
-      <costs>
-        <cost name="pts" typeId="820d-9f65-fcb1-d476" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
